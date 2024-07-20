@@ -8,7 +8,8 @@ public partial class player : CharacterBody2D
 
 	// Get the gravity from the project settings to be synced with RigidBody nodes.
 	public float gravity = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle();
-
+	public bool canDoubleJump = true;
+	
 	public override void _PhysicsProcess(double delta)
 	{
 		Vector2 velocity = Velocity;
@@ -18,9 +19,20 @@ public partial class player : CharacterBody2D
 			velocity.Y += gravity * (float)delta;
 
 		// Handle Jump.
-		if (Input.IsActionJustPressed("ui_accept") && IsOnFloor())
-			velocity.Y = JumpVelocity;
-
+		if (Input.IsActionJustPressed("ui_accept"))
+		{
+			if (IsOnFloor())
+			{
+				velocity.Y = JumpVelocity;
+				canDoubleJump = true;
+			}
+			else if (canDoubleJump)
+			{
+				velocity.Y = JumpVelocity;
+				canDoubleJump = false;
+			}
+		}
+		
 		// Get the input direction and handle the movement/deceleration.
 		// As good practice, you should replace UI actions with custom gameplay actions.
 		Vector2 direction = Input.GetVector("left", "right", "ui_up", "ui_down");
