@@ -24,7 +24,6 @@ public partial class player : CharacterBody2D
 		// Handle Jump.
 		if (Input.IsActionJustPressed("ui_accept"))
 		{
-			
 			if (IsOnFloor())
 			{
 				velocity.Y = JumpVelocity;
@@ -38,12 +37,6 @@ public partial class player : CharacterBody2D
 				//canDoubleJump = false;
 				temp--;
 			}
-			//else if(!canDoubleJump && HasPower && temp > 2)
-			//{
-				//velocity.Y = JumpVelocity;
-				//temp--;
-				//GD.Print("3th jump");
-			//}
 		}
 		
 		// Get the input direction and handle the movement/deceleration.
