@@ -5,32 +5,45 @@ public partial class player : CharacterBody2D
 {
 	public const float Speed = 130.0f;
 	public const float JumpVelocity = -300.0f;
-
+	
 	// Get the gravity from the project settings to be synced with RigidBody nodes.
 	public float gravity = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle();
-	public bool canDoubleJump = true;
+	//public bool canDoubleJump = false;
+	public static bool HasPower = false;
+	public static int stack = 1;
+	public int temp;
 	
 	public override void _PhysicsProcess(double delta)
 	{
 		Vector2 velocity = Velocity;
-
+		
 		// Add the gravity.
 		if (!IsOnFloor())
 			velocity.Y += gravity * (float)delta;
-
+			
 		// Handle Jump.
 		if (Input.IsActionJustPressed("ui_accept"))
 		{
+			
 			if (IsOnFloor())
 			{
 				velocity.Y = JumpVelocity;
-				canDoubleJump = true;
+				//canDoubleJump = true;
+				temp = stack;
+				GD.Print(temp);
 			}
-			else if (canDoubleJump)
+			else if (temp > 1 && HasPower)
 			{
 				velocity.Y = JumpVelocity;
-				canDoubleJump = false;
+				//canDoubleJump = false;
+				temp--;
 			}
+			//else if(!canDoubleJump && HasPower && temp > 2)
+			//{
+				//velocity.Y = JumpVelocity;
+				//temp--;
+				//GD.Print("3th jump");
+			//}
 		}
 		
 		// Get the input direction and handle the movement/deceleration.
