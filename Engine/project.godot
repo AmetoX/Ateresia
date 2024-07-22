@@ -15,6 +15,11 @@ run/main_scene="res://game.tscn"
 config/features=PackedStringArray("4.2", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Player="*res://player/player.cs"
+DoubleJump="*res://items/powers/DoubleJump.cs"
+
 [dotnet]
 
 project/assembly_name="Ateresia"
