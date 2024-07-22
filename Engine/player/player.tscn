@@ -123,5 +123,6 @@ autoplay = "idle"
 frame_progress = 0.883111
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 5
 position = Vector2(0, -6)
 shape = SubResource("CircleShape2D_wgwpa")
