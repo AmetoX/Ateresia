@@ -230,10 +230,10 @@ unique_name_in_owner = true
 script = ExtResource("1_47gn3")
 
 [node name="ScoreLabel" type="Label" parent="GameManager"]
-offset_left = 456.0
-offset_top = -716.0
-offset_right = 533.0
-offset_bottom = -691.0
+offset_left = 366.0
+offset_top = -702.0
+offset_right = 443.0
+offset_bottom = -677.0
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -324,10 +324,10 @@ offset_bottom = -27.0
 text = "Hello"
 
 [node name="Label2" type="Label" parent="Text"]
-offset_left = 479.0
-offset_top = -712.0
-offset_right = 683.0
-offset_bottom = -637.0
+offset_left = 567.0
+offset_top = -713.0
+offset_right = 771.0
+offset_bottom = -638.0
 text = "Thank you for playing my game.
 		ver. pre.alpha 0.001"
 horizontal_alignment = 1
