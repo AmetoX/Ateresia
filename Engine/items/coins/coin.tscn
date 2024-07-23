@@ -1,0 +1,75 @@
+[gd_scene load_steps=11 format=3 uid="uid://b3fc4nu5ryopi"]
+
+[ext_resource type="Texture2D" uid="uid://f2uvd3bx1v0u" path="res://textures/items/420-4201833_coins-clipart-sprite-coin-sprite-sheet-png-transparent-removebg-preview.png" id="1_2m56e"]
+[ext_resource type="Script" path="res://items/coins/coin.gd" id="1_42rxw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_brc1r"]
+atlas = ExtResource("1_2m56e")
+region = Rect2(16, 0, 140, 167)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7rucd"]
+atlas = ExtResource("1_2m56e")
+region = Rect2(156, 0, 140, 167)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kt3wj"]
+atlas = ExtResource("1_2m56e")
+region = Rect2(296, 0, 140, 167)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7d8ik"]
+atlas = ExtResource("1_2m56e")
+region = Rect2(436, 0, 140, 167)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rep0w"]
+atlas = ExtResource("1_2m56e")
+region = Rect2(576, 0, 140, 167)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8wl27"]
+atlas = ExtResource("1_2m56e")
+region = Rect2(716, 0, 140, 167)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hh47k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_brc1r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7rucd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kt3wj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7d8ik")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rep0w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8wl27")
+}],
+"loop": true,
+"name": &"coin",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vcx8s"]
+radius = 60.0
+
+[node name="Coin" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_42rxw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -5.96046e-08)
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_hh47k")
+animation = &"coin"
+autoplay = "coin"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3.55271e-15, 2)
+scale = Vector2(0.1, 0.1)
+shape = SubResource("CircleShape2D_vcx8s")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

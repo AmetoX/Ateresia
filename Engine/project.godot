@@ -18,7 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Player="*res://player/player.cs"
-DoubleJump="*res://items/powers/DoubleJump.cs"
+DoubleJump="*res://items/powers/double_jump.cs"
 
 [dotnet]
 
