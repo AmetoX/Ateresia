@@ -1,6 +1,7 @@
 using Godot;
 using System;
 
+@onready var game_manager = $"../../GameManager"
 
 public partial class DoubleJump : Area2D
 {
