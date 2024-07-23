@@ -3,15 +3,18 @@
 [ext_resource type="Texture2D" uid="uid://cq14t0tbov2uw" path="res://textures/world/platforms.png" id="1_3cah0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_texdo"]
-size = Vector2(80, 32)
+size = Vector2(48, 16)
 
 [node name="Platform" type="AnimatableBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 8)
+scale = Vector2(0.6, 0.5)
 texture = ExtResource("1_3cah0")
 region_enabled = true
 region_rect = Rect2(32, 32, 80, 32)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_texdo")
 one_way_collision = true
