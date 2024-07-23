@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://vadwktqksf1q"]
 
-[ext_resource type="Script" path="res://enemies/basicMob/Zombie.gd" id="1_0f0mm"]
+[ext_resource type="Script" path="res://enemies/basicMob/zombie.gd" id="1_0f0mm"]
 [ext_resource type="Texture2D" uid="uid://b4bam7e8ougi3" path="res://textures/enemies/pngegg.png" id="2_lyda6"]
 [ext_resource type="PackedScene" uid="uid://1iig0it01bty" path="res://world/kill_zone.tscn" id="3_sx2o5"]
 
