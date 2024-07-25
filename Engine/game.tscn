@@ -1,7 +1,8 @@
-[gd_scene load_steps=21 format=3 uid="uid://c4xnf4o5w1trm"]
+[gd_scene load_steps=22 format=3 uid="uid://c4xnf4o5w1trm"]
 
 [ext_resource type="PackedScene" uid="uid://cw4xfcdoovxcy" path="res://player/player.tscn" id="1_7g37g"]
 [ext_resource type="Script" path="res://world/game_manager.gd" id="1_47gn3"]
+[ext_resource type="PackedScene" uid="uid://uhwqrkl5ln8d" path="res://player/Hud/hud.tscn" id="2_lcvpd"]
 [ext_resource type="Texture2D" uid="uid://c1dsv7ki388ij" path="res://textures/world/WorldTxt-0002.png" id="2_mpxqj"]
 [ext_resource type="PackedScene" uid="uid://b2ascnxxyvgwv" path="res://items/powers/DoubleJump.tscn" id="3_bkxcv"]
 [ext_resource type="PackedScene" uid="uid://ywkl4p74j5pf" path="res://world/platform.tscn" id="3_fpwk6"]
@@ -238,7 +239,14 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
+[node name="Hud" parent="GameManager" instance=ExtResource("2_lcvpd")]
+
+[node name="playerScore" type="Label" parent="GameManager/Hud"]
+offset_right = 40.0
+offset_bottom = 23.0
+
 [node name="Player" parent="." instance=ExtResource("1_7g37g")]
+unique_name_in_owner = true
 z_index = 10
 position = Vector2(-1, -10)
 
@@ -314,6 +322,9 @@ position = Vector2(45, -15)
 [node name="Zombie" parent="Enemies" instance=ExtResource("6_3kyep")]
 position = Vector2(-315, -399)
 
+[node name="Zombie2" parent="Enemies" instance=ExtResource("6_3kyep")]
+position = Vector2(279, -608)
+
 [node name="Text" type="Node" parent="."]
 
 [node name="Label" type="Label" parent="Text"]
@@ -380,6 +391,3 @@ position = Vector2(420, -34)
 
 [node name="Coin" parent="Coins" instance=ExtResource("8_2elcs")]
 position = Vector2(472, -618)
-
-[node name="Zombie" parent="." instance=ExtResource("6_3kyep")]
-position = Vector2(279, -608)
