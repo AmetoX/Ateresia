@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://uhwqrkl5ln8d"]
+
+[node name="Hud" type="CanvasLayer"]
+
+[node name="CoinCount" type="Label" parent="."]
+offset_right = 192.0
+offset_bottom = 76.0
+metadata/_edit_use_anchors_ = true
