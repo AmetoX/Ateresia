@@ -1,26 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://dnvwa76oh41g0"]
+[gd_scene load_steps=3 format=3 uid="uid://dnvwa76oh41g0"]
 
-[ext_resource type="Script" path="res://world/kill_zone.gd" id="1_h3jiu"]
 [ext_resource type="Texture2D" uid="uid://cged3sumydory" path="res://textures/world/platfrom book.png" id="2_lw8pq"]
-[ext_resource type="PackedScene" uid="uid://1iig0it01bty" path="res://world/kill_zone.tscn" id="3_abgch"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_80vpf"]
 size = Vector2(32, 55)
 
 [node name="book_platform" type="AnimatableBody2D"]
 collision_mask = 2
-script = ExtResource("1_h3jiu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-2.71051e-20, -5.42101e-20)
 scale = Vector2(1, 0.875)
 texture = ExtResource("2_lw8pq")
-
-[node name="KillZone" parent="." instance=ExtResource("3_abgch")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
-position = Vector2(0, -0.5)
-shape = SubResource("RectangleShape2D_80vpf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_80vpf")
