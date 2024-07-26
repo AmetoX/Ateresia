@@ -16,7 +16,6 @@ func _physics_process(delta):
 	# Reset jumps when on the floor
 	if is_on_floor():
 		jumps_left = max_jumps
-		print("max jumps: " + str(max_jumps))
 		
 	# Handle jump
 	if Input.is_action_just_pressed("space") and jumps_left > 0:
