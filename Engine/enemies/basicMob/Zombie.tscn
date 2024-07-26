@@ -1,8 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://vadwktqksf1q"]
+[gd_scene load_steps=8 format=3 uid="uid://vadwktqksf1q"]
 
-[ext_resource type="Script" path="res://enemies/basicMob/zombie.gd" id="1_0f0mm"]
+[ext_resource type="Script" path="res://enemies/basicMob/Zombie.gd" id="1_io2y8"]
 [ext_resource type="Texture2D" uid="uid://b4bam7e8ougi3" path="res://textures/enemies/pngegg.png" id="2_lyda6"]
-[ext_resource type="PackedScene" uid="uid://1iig0it01bty" path="res://world/kill_zone.tscn" id="3_sx2o5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wvm5c"]
 atlas = ExtResource("2_lyda6")
@@ -40,11 +39,8 @@ animations = [{
 "speed": 3.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wqdpx"]
-size = Vector2(15, 30.4375)
-
 [node name="Zombie" type="Node2D"]
-script = ExtResource("1_0f0mm")
+script = ExtResource("1_io2y8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -19)
@@ -53,13 +49,6 @@ sprite_frames = SubResource("SpriteFrames_wrr6k")
 autoplay = "default"
 frame_progress = 0.930407
 flip_h = true
-
-[node name="KillZone" parent="." instance=ExtResource("3_sx2o5")]
-position = Vector2(0, -64)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
-position = Vector2(0.5, 48.2188)
-shape = SubResource("RectangleShape2D_wqdpx")
 
 [node name="RayCastRight" type="RayCast2D" parent="."]
 position = Vector2(0, -16)
