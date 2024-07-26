@@ -1,12 +1,11 @@
 extends Node
 
 var score = 0
-@onready var score_label = $ScoreLabel
-@onready var coin_count = $Hud/CoinCount
-@onready var player = %Player
+@onready var score_label = get_node("ScoreLabel")
+@onready var coin_count = get_node("Hud/CoinCount")
+
 
 func _ready():
-	coin_count.text = "Coins: " + str(score)
 	if CheckPoints.spawn:
 		player.global_position = CheckPoints.spawn
 
