@@ -1,15 +1,20 @@
 extends Node
 
 var score = 0
-@onready var score_label = get_node("ScoreLabel")
-@onready var coin_count = get_node("Hud/CoinCount")
-
+@onready var score_label = $ScoreLabel
+@onready var coins = $"../Hud/Coins"
+@onready var player = %Player
 
 func _ready():
 	if CheckPoints.spawn:
 		player.global_position = CheckPoints.spawn
+		print("checkpoint spawn: " + str(CheckPoints.spawn))
 
 func add_point():
 	score += 1
-	score_label.text = "Total coins: " + str(score) + "/20"
-	coin_count.text = "Coins: " + str(score)
+	score_label.text = "Coins collected: " + str(score) + "/21"
+	coins.text = str(score)
+
+func respawn():
+	if CheckPoints.spawn:
+		player.global_position = CheckPoints.spawn

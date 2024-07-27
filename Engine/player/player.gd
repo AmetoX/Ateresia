@@ -7,6 +7,9 @@ var jumps_left = max_jumps
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+	
+func _ready():
+	CheckPoints.player = self
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -21,7 +24,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("space") and jumps_left > 0:
 		velocity.y = JUMP_VELOCITY
 		jumps_left -= 1
-		print("Jumps left: ", jumps_left)
+		#print("Jumps left: ", jumps_left)
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.

@@ -17,9 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-player="*res://player/player.gd"
 CheckPoints="*res://world/checkPoints.gd"
-game_manager="*res://world/game_manager.gd"
 
 [dotnet]
 
