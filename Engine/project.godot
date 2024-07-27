@@ -18,7 +18,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 CheckPoints="*res://world/checkPoints.gd"
-player="*res://player/player.gd"
 
 [dotnet]
 

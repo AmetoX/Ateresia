@@ -4,13 +4,13 @@ const SPEED = 130.0
 const JUMP_VELOCITY = -300.0
 var max_jumps = 1
 var jumps_left = max_jumps
-@onready var player = $"."
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-func teleport():
-	player.global_position = CheckPoints.spawn
 	
+func _ready():
+	CheckPoints.player = self
+
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
