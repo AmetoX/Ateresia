@@ -3,10 +3,6 @@ extends Area2D
 
 func _on_body_entered(body):
 	print("You died...")
-	#if CheckPoints.player:
-		#print("Player found: ", CheckPoints.player.name)
-	#else:
-		#print("player not found")
 	timer.start()
 
 func _on_timer_timeout():
